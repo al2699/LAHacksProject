@@ -22,6 +22,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
     }
 
 
@@ -39,8 +40,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        LatLng sydney = new LatLng(33.134880, -117.303175);
+        mMap.addMarker(new MarkerOptions().position(sydney)
+                .title("Marker in Sydney")
+                .snippet("Description!!!"));
+
+        //TODO: IMPLEMENT for-loop to iterate through an array of type Event and then make a marker
+        //      for event on the Googlemap
+
+
+        //MAP MOVES: (move to MiraCosta Campus)
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        mMap.moveCamera(CameraUpdateFactory.zoomTo(18));
     }
 }
