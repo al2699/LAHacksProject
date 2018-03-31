@@ -8,11 +8,6 @@
     tools:context="com.example.alan.lahacks.EventProfile">
 
     <ImageButton
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@android:drawable/btn_star" />
-
-    <ImageButton
         android:id="@+id/imageButton"
         android:layout_width="match_parent"
         android:layout_height="75dp"
