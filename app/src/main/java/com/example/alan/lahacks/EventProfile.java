@@ -1,12 +1,9 @@
 package com.example.alan.lahacks;
 
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.ColorFilter;
 import android.graphics.LightingColorFilter;
-import android.graphics.drawable.Drawable;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -92,6 +89,12 @@ public class EventProfile extends AppCompatActivity {
                 }
             }
         });
+        //likeButton.setOnClickListener(new View.OnClickListener() {
+          //  @Override
+            //public void onClick(View view) {
+         //       likeButton.setBackgroundResource(R.drawable.);
+        //    }
+       // });
 
 
         final ImageButton toGoButton = (ImageButton) findViewById(R.id.imageButton7) ;
