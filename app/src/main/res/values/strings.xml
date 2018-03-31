@@ -25,4 +25,5 @@
     <string name="event_image">event image</string>
     <string name="event_date">event date</string>
     <string name="eventdate">eventDate</string>
+    <string name="comment_title">comments....</string>
 </resources>

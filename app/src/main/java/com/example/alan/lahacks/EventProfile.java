@@ -25,6 +25,7 @@ public class EventProfile extends AppCompatActivity {
         clickCounter1 = 0;
         //Link to creator's profile !!(CAUTION: Now just link to own profile)
         ImageButton profileButton = (ImageButton) findViewById(R.id.imageButton);
+        profileButton.setScaleType(ImageView.ScaleType.FIT_CENTER);
         profileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -135,15 +136,10 @@ public class EventProfile extends AppCompatActivity {
         descriptionText = (TextView)findViewById(R.id.descriptionText);
         descriptionText.setText(descriptionTextString);
 
-        //Link comment box to comment page
-        final TextView commentBox = (TextView) findViewById(R.id.comment_box) ;
-        commentBox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent startNewActivity = new Intent(EventProfile.this, CommentPage.class);
-                startActivity(startNewActivity);
-            }
-        });
 
+    }
+    public void toCommentPage(View view) {
+        Intent startNewActivity = new Intent(this, CommentPage.class);
+        startActivity(startNewActivity);
     }
 }
