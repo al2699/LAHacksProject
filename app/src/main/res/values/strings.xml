@@ -2,9 +2,9 @@
     <string name="app_name">LAHacks</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="button_1">Button 1</string>
-    <string name="button_2">Button 2</string>
-    <string name="button_3">Button 3</string>
+    <string name="button_1">Event Profile</string>
+    <string name="button_2">Personal Profile</string>
+    <string name="button_3">Map View</string>
     <string name="button_screen">Button Screen</string>
     <string name="item1">Item</string>
     <string name="title_activity_maps">Map</string>
