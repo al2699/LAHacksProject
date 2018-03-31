@@ -23,4 +23,6 @@
     <string name="eventname">eventName</string>
     <string name="eventdescription">eventDescription</string>
     <string name="event_image">event image</string>
+    <string name="event_date">event date</string>
+    <string name="eventdate">eventDate</string>
 </resources>
