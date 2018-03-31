@@ -17,4 +17,10 @@
     <string name="profile">Profile</string>
     <string name="calendar">Calendar</string>
     <string name="list">List</string>
+    <string name="numevents">numEvents</string>
+    <string name="numfriends">numFriends</string>
+    <string name="name_of_event">name of event</string>
+    <string name="eventname">eventName</string>
+    <string name="eventdescription">eventDescription</string>
+    <string name="event_image">event image</string>
 </resources>
