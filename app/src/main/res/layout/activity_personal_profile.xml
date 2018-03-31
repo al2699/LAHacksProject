@@ -15,6 +15,7 @@
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="183dp"
-            app:srcCompat="@drawable/ic_launcher_background" />
+            app:srcCompat="@drawable/sudoku"
+            android:contentDescription="Google It" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
