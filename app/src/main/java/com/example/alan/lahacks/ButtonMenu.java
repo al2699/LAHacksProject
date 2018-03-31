@@ -33,13 +33,12 @@ public class ButtonMenu extends AppCompatActivity {
         startActivity(startNewActivity);
     }
 
-    /*
-     * toGameSetup method. Takes user to Game Setup screen when button is clicked.
+    /**
+     * toMapView method. Takes user to the maps view when clicked.
      * @param view View
-
-    public void toGameSetup(View view) {
-        Intent startNewActivity = new Intent(this, GameSetup.class);
+     */
+    public void toMapView(View view) {
+        Intent startNewActivity = new Intent(this, MapsActivity.class);
         startActivity(startNewActivity);
     }
-    */
 }
