@@ -6,4 +6,6 @@
     <string name="button_2">Button 2</string>
     <string name="button_3">Button 3</string>
     <string name="button_screen">Button Screen</string>
+    <string name="first_last">First Last</string>
+    <string name="profile_picture">profile picture</string>
 </resources>
