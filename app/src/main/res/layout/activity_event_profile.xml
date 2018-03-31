@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:baselineAligned="true"
     tools:context="com.example.alan.lahacks.EventProfile">
 
     <ImageButton
@@ -81,16 +82,18 @@
         android:layout_width="match_parent"
         android:layout_height="163dp"
         android:ems="6"
+        android:fontFamily="@font/roboto_thin"
         android:lineSpacingExtra="8sp"
-        android:textSize="30sp" />
+        android:textSize="24sp"
+        android:typeface="normal" />
 
     <TextView
         android:id="@+id/comment_box"
         android:layout_width="match_parent"
-        android:layout_height="42dp"
+        android:layout_height="wrap_content"
         android:text="Comments..."
         android:textSize="24sp"
-        android:textStyle="bold" />
-
+        android:textStyle="bold"
+        android:layout_gravity="clip_vertical|top"/>
 
 </LinearLayout>
