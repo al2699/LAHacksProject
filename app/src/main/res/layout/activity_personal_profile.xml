@@ -45,10 +45,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="@string/first_last"
+                    android:paddingTop="10dp"
+                    android:text="@string/profileFirstLast"
                     android:textSize="24sp"
-                    android:textStyle="bold"
-                    android:paddingTop="10dp"/>
+                    android:textStyle="bold" />
             </FrameLayout>
         </LinearLayout>
 
@@ -60,7 +60,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:baselineAligned="false">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -78,12 +79,12 @@
                             android:id="@+id/textView"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginTop="5dp"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="Events"
-                            android:textSize="18sp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginLeft="25dp"/>
+                            android:text="@string/profileEvents"
+                            android:textSize="18sp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -100,8 +101,8 @@
                             android:layout_marginTop="-20dp"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="numEvents"
-                            android:textSize="10sp" />
+                            android:text="@string/numEvents"
+                            android:textSize="12sp" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -122,12 +123,12 @@
                             android:id="@+id/textView2"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:layout_marginRight="25dp"
+                            android:layout_marginTop="5dp"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="Friends"
-                            android:textSize="18sp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginRight="25dp"/>
+                            android:text="@string/profileFriends"
+                            android:textSize="18sp" />
 
                     </LinearLayout>
 
@@ -145,8 +146,8 @@
                             android:layout_marginTop="-20dp"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="numFriends"
-                            android:textSize="10sp" />
+                            android:text="@string/numFriends"
+                            android:textSize="12sp" />
                     </LinearLayout>
 
                 </LinearLayout>
