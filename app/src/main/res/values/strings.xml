@@ -6,10 +6,12 @@
     <string name="button_2">Button 2</string>
     <string name="button_3">Button 3</string>
     <string name="button_screen">Button Screen</string>
-    <string name="profileFirstLast">First Last</string>
+    <string name="item1">Item</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="profile_background">profile background</string>
     <string name="profile_picture">profile picture</string>
-    <string name="profileFriends">Friends</string>
-    <string name="numFriends">numFriends</string>
-    <string name="numEvents">numEvents</string>
+    <string name="name">name</string>
     <string name="profileEvents">Events</string>
+    <string name="profileFriends">Friends</string>
+
 </resources>
