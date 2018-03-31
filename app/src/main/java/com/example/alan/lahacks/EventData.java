@@ -11,15 +11,18 @@ public class EventData {
     private String title;
     private String details;
     private String date;
-    private String location_latitude;
-    private String location_longitude;
+    private double location_latitude;
+    private double location_longitude;
     private String thumbnail;
     private int upvotes;
     private int downvotes;
 
-    public EventData(String title, String details){
+    public EventData(String title, String details, String date, double location_latitude, double location_longitude){
         this.title = title;
         this.details = details;
+        this.date = date;
+        this.location_latitude = location_latitude;
+        this.location_longitude = location_longitude;
     }
 
     /*public EventData(){
@@ -45,12 +48,12 @@ public class EventData {
         date = string;
     }
 
-    public void setLocation_latitude(String string){
-        location_latitude = string;
+    public void setLocation_latitude(double lat){
+        location_latitude = lat;
     }
 
-    public void setLocation_longitude(String string){
-        location_longitude = string;
+    public void setLocation_longitude(double lon){
+        location_longitude = lon;
     }
 
     public void setThumbnail(String string){
@@ -77,11 +80,11 @@ public class EventData {
         return date;
     }
 
-    public String getLocation_latitude(){
+    public double getLocation_latitude(){
         return location_latitude;
     }
 
-    public String getLocation_longitude(){
+    public double getLocation_longitude(){
         return location_longitude;
     }
 

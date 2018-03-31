@@ -40,12 +40,12 @@ public class EventProfile extends AppCompatActivity {
                 likeButton.setBackgroundResource(R.drawable.eclipse);
             }
         });
-        likeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                likeButton.setBackgroundResource(R.drawable.);
-            }
-        });
+        //likeButton.setOnClickListener(new View.OnClickListener() {
+          //  @Override
+            //public void onClick(View view) {
+         //       likeButton.setBackgroundResource(R.drawable.);
+        //    }
+       // });
 
         final ImageButton saveButton = (ImageButton) findViewById(R.id.imageButton6) ;
         saveButton.setOnClickListener(new View.OnClickListener() {

@@ -3,6 +3,7 @@ package com.example.alan.lahacks;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.EventLog;
 import android.view.View;
 
 public class ButtonMenu extends AppCompatActivity {
@@ -41,4 +42,5 @@ public class ButtonMenu extends AppCompatActivity {
         Intent startNewActivity = new Intent(this, MapsActivity.class);
         startActivity(startNewActivity);
     }
+
 }

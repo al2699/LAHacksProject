@@ -6,11 +6,13 @@ package com.example.alan.lahacks;
 
 public class Profile
 {
-    String name;
+    private String name;
+    private int numberOfFriends;
     //Name, number of events joined, friends
 
-    public Profile(String name, int amount)
+    public Profile(String name, int numberOfFriends)
     {
-
+        this.name = name;
+        this.numberOfFriends =numberOfFriends;
     }
 }

@@ -10,9 +10,13 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.io.BufferedReader;
+
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    private EventData[] events;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,13 +41,28 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
+        EventData event1;
+        String fileName;
+        BufferedReader reader;
+        EventData[] events = new EventData[1];
         mMap = googleMap;
 
+        event1 = new EventData("Test", "Some details", "03/30/18", 33.190537, -117.303057);
+        events[0] = new EventData("a",  "b", "c", 0, 0);
+
         // Add a marker in Sydney and move the camera
+        LatLng testEvent  = new LatLng(event1.getLocation_latitude(), event1.getLocation_longitude());
         LatLng sydney = new LatLng(33.134880, -117.303175);
+
+        //Marker at fake miracosta
         mMap.addMarker(new MarkerOptions().position(sydney)
                 .title("Marker in Sydney")
                 .snippet("Description!!!"));
+
+        //Marker for testevent at real miracosta location
+        mMap.addMarker(new MarkerOptions().position(testEvent)
+                .title(event1.getTitle())
+                .snippet(event1.getDetails()));
 
         //TODO: IMPLEMENT for-loop to iterate through an array of type Event and then make a marker
         //      for event on the Googlemap
@@ -52,5 +71,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         //MAP MOVES: (move to MiraCosta Campus)
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
         mMap.moveCamera(CameraUpdateFactory.zoomTo(18));
+    }
+
+    public int getRowAmount()
+    {
+        return 0;
+    }
+
+    public void makeObjects()
+    {
+
     }
 }
