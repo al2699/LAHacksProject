@@ -112,13 +112,10 @@
         android:layout_height="wrap_content"
         android:text="8:00am-9:00am" />
 
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="163dp"
-        android:ems="6"
-        android:gravity="left|top"
-        android:hint="Description of the event"
-        android:inputType="textMultiLine" />
+        android:ems="6" />
 
     <ExpandableListView
         android:layout_width="match_parent"
