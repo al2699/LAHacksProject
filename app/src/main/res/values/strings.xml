@@ -13,5 +13,8 @@
     <string name="name">name</string>
     <string name="profileEvents">Events</string>
     <string name="profileFriends">Friends</string>
-
+    <string name="map">Map</string>
+    <string name="profile">Profile</string>
+    <string name="calendar">Calendar</string>
+    <string name="list">List</string>
 </resources>
