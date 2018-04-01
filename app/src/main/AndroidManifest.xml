@@ -43,7 +43,11 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".CommentPage"></activity>
+        <activity android:name=".CommentPage" />
+        <activity
+            android:name=".EventList"
+            android:label="@string/title_activity_event_list"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
