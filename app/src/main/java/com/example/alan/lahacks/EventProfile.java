@@ -159,7 +159,7 @@ public class EventProfile extends AppCompatActivity {
     }
 
     public void toCommentPage(View view) {
-        Intent startNewActivity = new Intent(this, CommentsPage.class);
+        Intent startNewActivity = new Intent(this, CampusEvent.class);
         startActivity(startNewActivity);
     }
 
