@@ -25,7 +25,7 @@ public class EventData {
         this.location_longitude = location_longitude;
     }
 
-    /*public EventData(){
+    public EventData(){
         title = "New Event";
         details = "Example Details";
         /*date = "4 April 2018";
@@ -33,8 +33,8 @@ public class EventData {
         location_longitude = "168374";
         thumbnail = "Insert Image id here";
         upvotes = 200;
-        downvotes = 1000;
-    }*/
+        downvotes = 1000;*/
+    }
 
     public void setTitle(String string){
         title = string;

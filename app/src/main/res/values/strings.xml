@@ -38,6 +38,7 @@
     <string name="textView_tab3">Your Saved Events are: </string>
     <string name="comment_title">comments....</string>
     <string name="title_activity_login">Sign in</string>
+    <string name="tab1_textView">Suggested Events:</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
