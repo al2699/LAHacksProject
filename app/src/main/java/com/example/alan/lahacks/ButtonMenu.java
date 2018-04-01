@@ -42,5 +42,9 @@ public class ButtonMenu extends AppCompatActivity {
         Intent startNewActivity = new Intent(this, MapsActivity.class);
         startActivity(startNewActivity);
     }
+    public void toCalendarView(View view) {
+        Intent startNewActivity = new Intent(this, Calendar_Activity.class);
+        startActivity(startNewActivity);
+    }
 
 }
