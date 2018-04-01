@@ -52,4 +52,6 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="title_activity_event_page">event_page</string>
+    <string name="title_activity_campus_event">CampusEvent</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.example.alan.lahacks;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -90,5 +91,14 @@ public class PersonalProfile extends AppCompatActivity {
         adapter = new EventAdapter(this, eventList);
         recyclerView.setAdapter(adapter);
 
+    }
+
+    /**
+     * toCampusEvent method. Takes user to Personal Profile screen when button is clicked.
+     * @param view View
+     */
+    public void toCampusEvent(View view) {
+        Intent startNewActivity = new Intent(this, EventProfile.class);
+        startActivity(startNewActivity);
     }
 }

@@ -15,27 +15,21 @@ import java.util.List;
  * RecyclerView.Adapter - sends/binds the data to the ViewHolder
  * RecyclerView.ViewHolder - Holds the view
  */
-public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHolder> {
+public class EventPageAdapter extends RecyclerView.Adapter<EventPageAdapter.EventViewHolder> {
 
     private Context mCtx;
-    private List<EventData> eventList;
     private List<Comment> commList;
 
-    public EventAdapter(Context mCtx, List<EventData> eventList) {
+    public EventPageAdapter(List<Comment> commList, Context mCtx) {
         this.mCtx = mCtx;
-        this.eventList = eventList;
-    }
-
-    public EventAdapter(List<Comment> commList, Context mCtx) {
-        this.mCtx = mCtx;
-        this.eventList = eventList;
+        this.commList = commList;
     }
 
     @NonNull
     @Override
     public EventViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(mCtx);
-        View view = inflater.inflate(R.layout.list_layout, null);
+        View view = inflater.inflate(R.layout.event_page_comm, null);
         EventViewHolder holder = new EventViewHolder(view);
         return holder;
     }
@@ -43,33 +37,31 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
     @Override
     public void onBindViewHolder(@NonNull EventViewHolder holder, int position) {
 
-        EventData event = eventList.get(position);
-        holder.textViewTitle.setText(event.getTitle());
-        holder.textViewDesc.setText(event.getShortDesc());
-        holder.textViewDate.setText(event.getDate());
+        Comment comm = commList.get(position);
+        holder.commentName.setText(comm.getName());
+        holder.commenText.setText(comm.getComm());
 
-        holder.imageView.setImageDrawable(mCtx.getResources().getDrawable(event.getImage()));
+        holder.imageView.setImageDrawable(mCtx.getResources().getDrawable(comm.getImage()));
 
 
     }
 
     @Override
     public int getItemCount() {
-        return eventList.size();
+        return commList.size();
     }
 
     class EventViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imageView;
-        TextView textViewTitle, textViewDesc, textViewDate, textViewRating, textViewPrice;
+        TextView commentName, commenText;
 
         public EventViewHolder(View itemView) {
             super(itemView);
 
-            imageView = itemView.findViewById(R.id.imageViewProfile);
-            textViewTitle = itemView.findViewById(R.id.textViewTitle);
-            textViewDesc = itemView.findViewById(R.id.textViewShortDesc);
-            textViewDate = itemView.findViewById(R.id.textViewDate);
+            imageView = itemView.findViewById(R.id.commentImg);
+            commentName = itemView.findViewById(R.id.commentName);
+            commenText = itemView.findViewById(R.id.commenText);
         }
     }
 }
