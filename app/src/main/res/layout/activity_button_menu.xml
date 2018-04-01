@@ -45,29 +45,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/button_event_list"
-        android:onClick="toEventList"/>
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/button_loginPage"
-        android:onClick="toLoginPage"/>
+        android:onClick="toEventList"
+        android:paddingBottom="20dp"/>
 
     <TableRow
         android:id="@+id/tableRow"
         android:layout_width="match_parent"
         android:layout_height="32dp"
         android:background="@color/colorPrimaryDark">
-
-        <ImageButton
-            android:id="@+id/listImageButton"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="40dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@drawable/ic_list_white_24dp"
-            />
 
         <ImageButton
             android:id="@+id/mapImageButton"
@@ -79,13 +64,14 @@
             android:onClick="toMapView"/>
 
         <ImageButton
-            android:id="@+id/calendarImageButton"
+            android:id="@+id/listImageButton"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="40dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@drawable/ic_event_white_24dp"
-            android:onClick="toCalendarView"/>
+            android:src="@drawable/ic_list_white_24dp"
+            android:onClick="toEventList"/>
+
 
         <ImageButton
             android:id="@+id/profileImageButton"

@@ -144,4 +144,31 @@ public class EventProfile extends AppCompatActivity {
         Intent startNewActivity = new Intent(this, CommentPage.class);
         startActivity(startNewActivity);
     }
+
+    /**
+     * toEventProfile method. Takes user to GEvent Profile screen when button is clicked.
+     * @param view View
+     */
+    public void toEventProfile(View view) {
+        Intent startNewActivity = new Intent(this, EventProfile.class);
+        startActivity(startNewActivity);
+    }
+
+    /**
+     * toPersonalProfile method. Takes user to Personal Profile screen when button is clicked.
+     * @param view View
+     */
+    public void toPersonalProfile(View view) {
+        Intent startNewActivity = new Intent(this, PersonalProfile.class);
+        startActivity(startNewActivity);
+    }
+
+    /**
+     * toMapView method. Takes user to the maps view when clicked.
+     * @param view View
+     */
+    public void toMapView(View view) {
+        Intent startNewActivity = new Intent(this, MapsActivity.class);
+        startActivity(startNewActivity);
+    }
 }

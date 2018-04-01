@@ -22,7 +22,7 @@
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:typeface="normal" />
+        android:typeface="normal"/>
 
     <ImageView
         android:id="@+id/eventImage"
@@ -37,7 +37,7 @@
 
         <ImageButton
             android:id="@+id/imageButton3"
-            android:layout_width="43dp"
+            android:layout_width="44dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="1dp"
             android:layout_marginStart="1dp"
@@ -95,8 +95,9 @@
     <Button
         android:id="@+id/comment_box"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:text="@string/comment_title"
-        android:onClick="toCommentPage" />
+        android:onClick="toCommentPage"
+        android:layout_weight="50"/>
 
 </LinearLayout>
