@@ -39,17 +39,19 @@
         android:layout_height="wrap_content"
         android:text="@string/button_map_view"
         android:onClick="toMapView"/>
+
     <Button
         android:id="@+id/button4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/button_map_view"
+        android:text="@string/button_event_list"
         android:onClick="toEventList"/>
+
     <Button
         android:id="@+id/button5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/button_map_view"
+        android:text="@string/button_loginPage"
         android:onClick="toLoginPage"/>
     <TableRow
         android:id="@+id/tableRow"
@@ -95,12 +97,4 @@
 
 
     </TableRow>
-
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/button_5"
-        android:onClick="toLoginPage"/>
 </LinearLayout>

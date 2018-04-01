@@ -7,6 +7,7 @@
     <string name="button_map_view">Map View</string>
     <string name="button_event_list">Event List</string>
     <string name="button_screen">Button Screen</string>
+    <string name="button_loginPage">Login Page</string>
     <string name="item1">Item</string>
     <string name="title_activity_maps">Map</string>
     <string name="profile_background">profile background</string>
