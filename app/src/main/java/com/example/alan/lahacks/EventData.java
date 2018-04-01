@@ -10,12 +10,23 @@ public class EventData {
 
     private String title;
     private String details;
+    private String shortDesc;
     private String date;
     private double location_latitude;
     private double location_longitude;
     private String thumbnail;
     private int upvotes;
     private int downvotes;
+    private int image;
+    private int id;
+
+    public EventData(int id, String title, String shortDesc, String date, int image){
+        this.id = id;
+        this.title = title;
+        this.shortDesc = shortDesc;
+        this.date = date;
+        this.image = image;
+    }
 
     public EventData(String title, String details, String date, double location_latitude, double location_longitude){
         this.title = title;
@@ -41,7 +52,7 @@ public class EventData {
     }
 
     public void setDetails(String string){
-        details = string;
+        shortDesc = string;
     }
 
     public void setDate(String string){
@@ -72,9 +83,14 @@ public class EventData {
         return title;
     }
 
+    public String getShortDesc(){
+        return shortDesc;
+    }
+
     public String getDetails(){
         return details;
     }
+
 
     public String getDate(){
         return date;
@@ -98,5 +114,13 @@ public class EventData {
 
     public int getDownvotes(){
         return downvotes;
+    }
+
+    public int getImage() {
+        return image;
+    }
+
+    public int getId() {
+        return id;
     }
 }
