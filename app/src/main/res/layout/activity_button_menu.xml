@@ -53,6 +53,7 @@
         android:layout_height="wrap_content"
         android:text="@string/button_loginPage"
         android:onClick="toLoginPage"/>
+
     <TableRow
         android:id="@+id/tableRow"
         android:layout_width="match_parent"
@@ -94,7 +95,6 @@
             android:layout_weight="1"
             android:src="@drawable/ic_face_white_24dp"
             android:onClick="toPersonalProfile"/>
-
 
     </TableRow>
 </LinearLayout>
