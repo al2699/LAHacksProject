@@ -56,5 +56,39 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
+    <TableRow
+        android:id="@+id/tableRow"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_gravity="bottom"
+        android:background="@color/colorPrimaryDark">
 
+        <ImageButton
+            android:id="@+id/mapImageButton"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/ic_map_white_24dp"
+            android:onClick="toMapView"/>
+
+        <ImageButton
+            android:id="@+id/listImageButton"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/ic_list_white_24dp"
+            android:onClick="toEventProfile"/>
+
+        <ImageButton
+            android:id="@+id/profileImageButton"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/ic_face_white_24dp"
+            android:onClick="toPersonalProfile"/>
+
+    </TableRow>
 </android.support.design.widget.CoordinatorLayout>

@@ -96,6 +96,7 @@
         android:id="@+id/comment_box"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/comment_title" />
+        android:text="@string/comment_title"
+        android:onClick="toCommentPage"/>
 
 </LinearLayout>
