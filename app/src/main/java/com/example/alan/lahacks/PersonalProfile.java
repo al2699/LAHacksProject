@@ -29,7 +29,7 @@ public class PersonalProfile extends AppCompatActivity {
 
 
         eventList = new ArrayList<>();
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
