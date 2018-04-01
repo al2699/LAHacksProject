@@ -1,8 +1,5 @@
 package com.example.alan.lahacks;
 
-/**
- * Created by alan on 3/31/18.
- */
 
 public class Profile
 {

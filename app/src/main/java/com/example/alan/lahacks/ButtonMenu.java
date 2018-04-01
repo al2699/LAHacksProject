@@ -48,6 +48,7 @@ public class ButtonMenu extends AppCompatActivity {
      */
     public void toEventList(View view) {
         Intent startNewActivity = new Intent(this, EventList.class);
+        startNewActivity.putExtra("eventInteger", 0);
         startActivity(startNewActivity);
     }
 

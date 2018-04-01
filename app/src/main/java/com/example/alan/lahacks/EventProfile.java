@@ -15,9 +15,11 @@ public class EventProfile extends AppCompatActivity {
 
     //Initialize all of my Objects to be declared within onCreate method.
     TextView descriptionText;
-    String descriptionTextString = "The star party will be host in front of the fountain" ;
+    String descriptionTextString = "";
     int likeCount, saveCount, toGoCount;
     int clickCounter1, clickCounter2, clickCounter3;
+    EventData e[] = new EventData[1];
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +27,8 @@ public class EventProfile extends AppCompatActivity {
         clickCounter1 = 0;
         //Link to creator's profile !!(CAUTION: Now just link to own profile)
         ImageButton profileButton = (ImageButton) findViewById(R.id.imageButton);
+        profileButton.setImageResource(R.drawable.profilepic);
+        //profileButton.setBackgroundResource(R.drawable.);
         profileButton.setScaleType(ImageView.ScaleType.FIT_CENTER);
         profileButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,6 +38,11 @@ public class EventProfile extends AppCompatActivity {
 
             }
         });
+
+        int eventInteger;
+        eventInteger = grabInteger();
+        e[eventInteger] = new EventData("a","The star party will be host in front of the fountain","c",0,0);
+        descriptionTextString += e[0].getDetails();
 
         //Add actions to Like, save, and toGo buttons.
         final ImageButton likeButton = (ImageButton) findViewById(R.id.imageButton3) ;
@@ -74,7 +83,7 @@ public class EventProfile extends AppCompatActivity {
             public void onClick(View view) {
                 if(clickCounter2 == 0){
                     //Filled image as you have just added one to the likes
-                    saveButton.setImageResource(R.drawable.change);
+                    saveButton.setImageResource(R.drawable.save_button);
                     ColorFilter filter = new LightingColorFilter( Color.BLACK, Color.YELLOW);
                     saveButton.setColorFilter(filter);
                     saveCount += 1;
@@ -138,8 +147,19 @@ public class EventProfile extends AppCompatActivity {
 
 
     }
+
+    public int grabInteger()
+    {
+        Intent mIntent;
+        mIntent = getIntent();
+
+        int intValue = mIntent.getIntExtra("eventInteger", 0);
+
+        return intValue;
+    }
+
     public void toCommentPage(View view) {
-        Intent startNewActivity = new Intent(this, CampusEvent.class);
+        Intent startNewActivity = new Intent(this, CommentsPage.class);
         startActivity(startNewActivity);
     }
 
