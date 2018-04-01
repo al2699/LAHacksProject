@@ -15,9 +15,11 @@ public class EventProfile extends AppCompatActivity {
 
     //Initialize all of my Objects to be declared within onCreate method.
     TextView descriptionText;
-    String descriptionTextString = "The star party will be host in front of the fountain" ;
+    String descriptionTextString = "";
     int likeCount, saveCount, toGoCount;
     int clickCounter1, clickCounter2, clickCounter3;
+    EventData e[] = new EventData[1];
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +38,11 @@ public class EventProfile extends AppCompatActivity {
 
             }
         });
+
+        int eventInteger;
+        eventInteger = grabInteger();
+        e[eventInteger] = new EventData("a","The star party will be host in front of the fountain","c",0,0);
+        descriptionTextString += e[0].getDetails();
 
         //Add actions to Like, save, and toGo buttons.
         final ImageButton likeButton = (ImageButton) findViewById(R.id.imageButton3) ;
@@ -140,6 +147,17 @@ public class EventProfile extends AppCompatActivity {
 
 
     }
+
+    public int grabInteger()
+    {
+        Intent mIntent;
+        mIntent = getIntent();
+
+        int intValue = mIntent.getIntExtra("eventInteger", 0);
+
+        return intValue;
+    }
+
     public void toCommentPage(View view) {
         Intent startNewActivity = new Intent(this, CommentsPage.class);
         startActivity(startNewActivity);
