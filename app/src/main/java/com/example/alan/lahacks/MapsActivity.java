@@ -9,14 +9,14 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.*;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.*;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
+//ACTUAL MIRACOSTA COORDINATES: 33.191085, -117.303089
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback{
 
     private GoogleMap mMap;
 
@@ -52,37 +52,52 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         EventData[] events;
         mMap = googleMap;
 
-        event1 = new EventData("Test", "Some details", "03/30/18", 33.190537, -117.303057);
+        event1 = new EventData("Test", "Some details", "03/30/18", 33.191085, -117.303089);
         events = makeObjects();
         System.out.println("Event 1 data: " + events[0].getTitle());
+        System.out.println(events[0]);
 
 
         // Add a marker in Sydney and move the camera
         LatLng testEvent  = new LatLng(event1.getLocation_latitude(), event1.getLocation_longitude());
         LatLng sydney = new LatLng(33.134880, -117.303175);
+        System.out.println("Making first programmatic event.");
         LatLng testEvent2 = new LatLng(events[0].getLocation_latitude(), events[0].getLocation_latitude());
 
         //Marker at fake miracosta
-        mMap.addMarker(new MarkerOptions().position(sydney)
+        mMap.addMarker(new MarkerOptions()
+                .position(sydney)
                 .title("Marker in Sydney")
                 .snippet("Description!!!"));
 
         //Marker for testevent at real miracosta location
-        mMap.addMarker(new MarkerOptions().position(testEvent)
+        mMap.addMarker(new MarkerOptions()
+                .position(testEvent)
                 .title(event1.getTitle())
                 .snippet(event1.getDetails()));
 
         //TEST MARKER
-        mMap.addMarker(new MarkerOptions().position(testEvent2)
+        System.out.println("Making second programmatic event: marker");
+        mMap.addMarker(new MarkerOptions()
+                .position(testEvent2)
                 .title(events[0].getTitle())
                 .snippet(events[0].getDetails()));
 
         //TODO: IMPLEMENT for-loop to iterate through an array of type Event and then make a marker
         //      for event on the Googlemap
+        System.out.println("Making second programmatic event: iteratively!!!");
+        for(int i = 0; i < events.length - 1; i++)
+        {
+            System.out.println("Beginning iterative event: " + i);
+            mMap.addMarker(new MarkerOptions()
+                    .position(new LatLng(events[i].getLocation_latitude(), events[i].getLocation_longitude()))
+                    .title(events[i].getTitle())
+                    .snippet(events[i].getDetails()));
+        }
 
 
         //MAP MOVES: (move to MiraCosta Campus)
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(testEvent));
         mMap.moveCamera(CameraUpdateFactory.zoomTo(18));
     }
 
@@ -95,7 +110,22 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      */
     public int getRowAmount(BufferedReader reader)
     {
-        return 1;
+        int rows;
+        rows = 0;
+
+        try
+        {
+            while (reader.readLine() != null)
+            {
+                rows++;
+            }
+            return rows;
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+        return 0;
     }
 
 
@@ -108,19 +138,54 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         System.out.println("makeObjects beginning");
         BufferedReader reader = null;
         EventData[] events;
-        try {
-            System.out.println("ASSETS FOLDER");
-            System.out.println(getAssets());
-            reader = new BufferedReader(new InputStreamReader(getResources().openRawResource(R.raw.events)));
-            events = new EventData[getRowAmount(reader)];
+        int amountOfRows;
 
-            events[0] = new EventData("a", "b", "c", 33.190535, -117.303055);
+        try {
+            System.out.println("Just entered try block. Will now read.");
+            reader = new BufferedReader(new InputStreamReader(getResources().openRawResource(R.raw.events)));
+            amountOfRows = getRowAmount(reader);
+            System.out.println("read in once. Opening again.");
+            reader.close();
+            reader = new BufferedReader(new InputStreamReader(getResources().openRawResource(R.raw.events)));
+            System.out.println("Just finished reading.");
+            events = new EventData[amountOfRows];
+
+            reader.readLine();
+            System.out.println("About to enter the for loop");
+            for(int j = 0; j < amountOfRows - 1; j++)
+            {
+                try
+                {
+                    String[] row;
+                    String temp;
+
+                    temp = reader.readLine();
+                    row = temp.split(",");
+
+                    System.out.println("Just finished filling string.");
+                    System.out.println("Lat: " + row[5]);
+                    System.out.println("Long: " + row[4]);
+                    events[j] = new EventData(row[1], row[2], row[3], Double.parseDouble(row[4]), Double.parseDouble(row[5]));
+                    System.out.println("Just created first object.");
+                    System.out.println(events[j]);
+                    System.out.println("Just finished object: " + j);
+                }
+                catch(NumberFormatException e)
+                {
+                    e.printStackTrace();
+                }
+            }
+
             System.out.println("Finished Instantiating first element.");
             return events;
             }
+            catch(FileNotFoundException e)
+            {
+                System.out.println("REALLY ENCOUNTERED A FILE NOT FOUND EXCEPTION.");
+            }
             catch(Exception e)
             {
-                System.out.println("Encountered IOException!");
+                e.printStackTrace();
             }
             return null;
             //reader.close();

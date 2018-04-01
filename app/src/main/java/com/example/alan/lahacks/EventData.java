@@ -47,6 +47,23 @@ public class EventData {
         downvotes = 1000;*/
     }
 
+    @Override
+    public String toString() {
+        return "EventData{" +
+                "title='" + title + '\'' +
+                ", details='" + details + '\'' +
+                ", shortDesc='" + shortDesc + '\'' +
+                ", date='" + date + '\'' +
+                ", location_latitude=" + location_latitude +
+                ", location_longitude=" + location_longitude +
+                ", thumbnail='" + thumbnail + '\'' +
+                ", upvotes=" + upvotes +
+                ", downvotes=" + downvotes +
+                ", image=" + image +
+                ", id=" + id +
+                '}';
+    }
+
     public void setTitle(String string){
         title = string;
     }
