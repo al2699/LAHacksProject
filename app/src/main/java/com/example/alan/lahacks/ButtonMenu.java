@@ -3,7 +3,6 @@ package com.example.alan.lahacks;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.EventLog;
 import android.view.View;
 
 public class ButtonMenu extends AppCompatActivity {
@@ -43,4 +42,12 @@ public class ButtonMenu extends AppCompatActivity {
         startActivity(startNewActivity);
     }
 
+    /**
+     * toEventList method. Takes user to the event list view when clicked.
+     * @param view View
+     */
+    public void toEventList(View view) {
+        Intent startNewActivity = new Intent(this, EventList.class);
+        startActivity(startNewActivity);
+    }
 }
