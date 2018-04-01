@@ -41,7 +41,9 @@ public class EventProfile extends AppCompatActivity {
 
         int eventInteger;
         eventInteger = grabInteger();
-        e[eventInteger] = new EventData("a","The star party will be host in front of the fountain","c",0,0);
+        e[eventInteger] = new EventData("a","Set up your professional profile, learn the basics, and " +
+                " effectively harness the power of LinkedIn to connect with " +
+                " employers, gather career information, and find jobs.","c",0,0);
         descriptionTextString += e[0].getDetails();
 
         //Add actions to Like, save, and toGo buttons.
@@ -139,7 +141,7 @@ public class EventProfile extends AppCompatActivity {
 
         //Setup event picture
         ImageView eventPicture =(ImageView) findViewById(R.id.eventImage) ;
-        eventPicture.setBackgroundResource(R.drawable.eclipse);
+        eventPicture.setBackgroundResource(R.drawable.career);
 
         //Link all of my objects to the ones created in my XML.
         descriptionText = (TextView)findViewById(R.id.descriptionText);

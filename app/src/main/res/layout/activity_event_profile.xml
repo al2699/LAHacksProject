@@ -19,11 +19,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
-        android:text="StarParty"
+        android:text="Networking Party"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:typeface="normal"/>
+        android:typeface="normal" />
 
     <ImageView
         android:id="@+id/eventImage"
@@ -89,7 +89,7 @@
         android:ems="6"
         android:fontFamily="@font/roboto_thin"
         android:lineSpacingExtra="8sp"
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         android:typeface="normal" />
 
