@@ -25,6 +25,8 @@ public class EventProfile extends AppCompatActivity {
         clickCounter1 = 0;
         //Link to creator's profile !!(CAUTION: Now just link to own profile)
         ImageButton profileButton = (ImageButton) findViewById(R.id.imageButton);
+        profileButton.setImageResource(R.drawable.profilepic);
+        //profileButton.setBackgroundResource(R.drawable.);
         profileButton.setScaleType(ImageView.ScaleType.FIT_CENTER);
         profileButton.setOnClickListener(new View.OnClickListener() {
             @Override
