@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "375035301768",
+    "firebase_url": "https://lahacksproject-876d5.firebaseio.com",
+    "project_id": "lahacksproject-876d5",
+    "storage_bucket": "lahacksproject-876d5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:375035301768:android:bb8e9c254894181a",
+        "android_client_info": {
+          "package_name": "com.example.alan.lahacks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "375035301768-qcrr998tcibfkl6vgodjohiq3svdeq2o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.alan.lahacks",
+            "certificate_hash": "bb2f7e962b8fe12b85cfaaea9841ff54c5a08087"
+          }
+        },
+        {
+          "client_id": "375035301768-jf1cmf3sr4m3q6fkj8t0iqjkjo5082dj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjI8sqICvUWhqTI-8_bV3_1asueKCyI0Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "375035301768-jf1cmf3sr4m3q6fkj8t0iqjkjo5082dj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
