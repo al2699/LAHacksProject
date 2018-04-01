@@ -411,7 +411,7 @@ public class Calendar_Activity extends Activity
                             + mLastError.getMessage());
                 }
             } else {
-                mOutputText.setText("Request cancelled.");
+                mOutputText.setText("Request cancelled!");
             }
         }
     }
