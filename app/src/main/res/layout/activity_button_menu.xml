@@ -23,24 +23,21 @@
         android:id="@+id/button1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/button_1"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:text="@string/button_event_profile"
         android:onClick="toEventProfile"/>
 
     <Button
         android:id="@+id/button2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/button_2"
-        app:layout_constraintTop_toBottomOf="@+id/button1"
+        android:text="@string/button_personal_profile"
         android:onClick="toPersonalProfile"/>
 
     <Button
         android:id="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/button_3"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
+        android:text="@string/button_map_view"
         android:onClick="toMapView"/>
     <TableRow
         android:id="@+id/tableRow"
