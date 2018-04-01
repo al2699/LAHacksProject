@@ -8,10 +8,12 @@
     tools:context="com.example.alan.lahacks.ButtonMenu">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/button_screen"
         android:textSize="30sp"
+        android:layout_alignParentTop="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -21,22 +23,67 @@
         android:id="@+id/button1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/button_1"
+        android:text="@string/button_event_profile"
         android:onClick="toEventProfile"/>
 
     <Button
         android:id="@+id/button2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/button_2"
+        android:text="@string/button_personal_profile"
         android:onClick="toPersonalProfile"/>
 
     <Button
         android:id="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/button_3"
+        android:text="@string/button_map_view"
         android:onClick="toMapView"/>
+    <TableRow
+        android:id="@+id/tableRow"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:background="@color/colorPrimaryDark">
+
+        <ImageButton
+            android:id="@+id/listImageButton"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/ic_list_white_24dp"
+            />
+
+        <ImageButton
+            android:id="@+id/mapImageButton"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/ic_map_white_24dp"
+            android:onClick="toMapView"/>
+
+        <ImageButton
+            android:id="@+id/calendarImageButton"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/ic_event_white_24dp"
+            android:onClick="toCalendarView"/>
+
+        <ImageButton
+            android:id="@+id/profileImageButton"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/ic_face_white_24dp"
+            android:onClick="toPersonalProfile"/>
+
+
+    </TableRow>
+
 
     <Button
         android:id="@+id/button5"

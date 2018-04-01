@@ -2,10 +2,10 @@
     <string name="app_name">LAHacks</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="button_1">Event Profile</string>
-    <string name="button_2">Personal Profile</string>
-    <string name="button_3">Map View</string>
-    <string name="button_5">LoginPage</string>
+    <string name="button_event_profile">Event Profile</string>
+    <string name="button_personal_profile">Personal Profile</string>
+    <string name="button_map_view">Map View</string>
+    <string name="button_event_list">Event List</string>
     <string name="button_screen">Button Screen</string>
     <string name="item1">Item</string>
     <string name="title_activity_maps">Map</string>
@@ -26,6 +26,15 @@
     <string name="event_image">event image</string>
     <string name="event_date">event date</string>
     <string name="eventdate">eventDate</string>
+    <string name="title_activity_event_list">EventList</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="tab_text_1">Featured</string>
+    <string name="tab_text_2">Suggested</string>
+    <string name="tab_text_3">Saved Events</string>
+    <string name="textView_tab1">Your Suggested Events are: </string>
+    <string name="textView_tab2">Your Featured Events are: </string>
+    <string name="textView_tab3">Your Saved Events are: </string>
     <string name="comment_title">comments....</string>
     <string name="title_activity_login">Sign in</string>
 
