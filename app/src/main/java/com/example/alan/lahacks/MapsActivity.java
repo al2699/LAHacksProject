@@ -2,12 +2,14 @@ package com.example.alan.lahacks;
 
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.view.View;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.*;
 import java.io.BufferedReader;
@@ -89,6 +91,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         for(int i = 0; i < events.length - 1; i++)
         {
             System.out.println("Beginning iterative event: " + i);
+
             mMap.addMarker(new MarkerOptions()
                     .position(new LatLng(events[i].getLocation_latitude(), events[i].getLocation_longitude()))
                     .title(events[i].getTitle())
@@ -127,6 +130,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
         return 0;
     }
+
 
 
     /**
