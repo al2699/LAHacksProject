@@ -42,11 +42,6 @@ public class ButtonMenu extends AppCompatActivity {
         startActivity(startNewActivity);
     }
 
-    public void toCalendarView(View view) {
-        Intent startNewActivity = new Intent(this, Calendar_Activity.class);
-        startActivity(startNewActivity);
-    }
-
     /**
      * toEventList method. Takes user to the event list view when clicked.
      * @param view View
@@ -56,13 +51,17 @@ public class ButtonMenu extends AppCompatActivity {
         startActivity(startNewActivity);
     }
 
-    /**
+    /*public void toCalendarView(View view) {
+        Intent startNewActivity = new Intent(this, Calendar_Activity.class);
+        startActivity(startNewActivity);
+    }*/
+
+    /*
      * toLogin method. Takes user to the login view when clicked.
      * @param view View
-     */
+
     public void toLoginPage(View view) {
         Intent startNewActivity = new Intent(this, LoginPage.class);
         startActivity(startNewActivity);
-    }
-
+    }*/
 }
