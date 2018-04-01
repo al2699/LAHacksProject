@@ -5,6 +5,7 @@
     <string name="button_1">Event Profile</string>
     <string name="button_2">Personal Profile</string>
     <string name="button_3">Map View</string>
+    <string name="button_5">LoginPage</string>
     <string name="button_screen">Button Screen</string>
     <string name="item1">Item</string>
     <string name="title_activity_maps">Map</string>

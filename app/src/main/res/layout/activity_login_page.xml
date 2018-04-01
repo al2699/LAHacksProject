@@ -42,5 +42,12 @@
             app:layout_constraintBottom_toBottomOf="parent"
             tools:layout_editor_absoluteX="144dp" />
 
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        android:onClick="toButtonMenu"/>
+
 
 </LinearLayout>

@@ -43,4 +43,13 @@ public class ButtonMenu extends AppCompatActivity {
         startActivity(startNewActivity);
     }
 
+    /**
+     * toLogin method. Takes user to the login view when clicked.
+     * @param view View
+     */
+    public void toLoginPage(View view) {
+        Intent startNewActivity = new Intent(this, LoginPage.class);
+        startActivity(startNewActivity);
+    }
+
 }

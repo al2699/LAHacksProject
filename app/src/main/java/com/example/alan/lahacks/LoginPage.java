@@ -1,5 +1,6 @@
 package com.example.alan.lahacks;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -42,8 +43,12 @@ public class LoginPage extends AppCompatActivity {
                 createAccount(mEmailField.toString(), mPasswordField.toString());
             }
         });
+
         mAuth = FirebaseAuth.getInstance();
+
     }
+
+
 
     @Override
     public void onStart() {
@@ -96,6 +101,10 @@ public class LoginPage extends AppCompatActivity {
     //    mAuth.
     //}
 
+    public void toButtonMenu(View view) {
+        Intent startNewActivity = new Intent(this, ButtonMenu.class);
+        startActivity(startNewActivity);
+    }
     private void updateUI(FirebaseUser user) {
         //hideProgressDialog();
         if (user != null) {
