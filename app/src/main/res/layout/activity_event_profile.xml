@@ -28,7 +28,7 @@
     <ImageView
         android:id="@+id/eventImage"
         android:layout_width="match_parent"
-        android:layout_height="198dp"
+        android:layout_height="163dp"
         android:background="@drawable/eclipse" />
 
     <LinearLayout
@@ -89,7 +89,7 @@
         android:ems="6"
         android:fontFamily="@font/roboto_thin"
         android:lineSpacingExtra="8sp"
-        android:textSize="18sp"
+        android:textSize="14sp"
         android:textStyle="bold"
         android:typeface="normal" />
 
