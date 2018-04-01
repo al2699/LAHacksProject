@@ -12,6 +12,7 @@
         android:id="@+id/imageButton"
         android:layout_width="match_parent"
         android:layout_height="64dp"
+        android:background="@android:color/holo_green_light"
         app:srcCompat="@mipmap/ic_launcher_round" />
 
     <TextView

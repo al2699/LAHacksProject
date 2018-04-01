@@ -76,7 +76,7 @@ public class EventProfile extends AppCompatActivity {
             public void onClick(View view) {
                 if(clickCounter2 == 0){
                     //Filled image as you have just added one to the likes
-                    saveButton.setImageResource(R.drawable.change);
+                    saveButton.setImageResource(R.drawable.save_button);
                     ColorFilter filter = new LightingColorFilter( Color.BLACK, Color.YELLOW);
                     saveButton.setColorFilter(filter);
                     saveCount += 1;
@@ -141,7 +141,7 @@ public class EventProfile extends AppCompatActivity {
 
     }
     public void toCommentPage(View view) {
-        Intent startNewActivity = new Intent(this, CommentPage.class);
+        Intent startNewActivity = new Intent(this, CommentsPage.class);
         startActivity(startNewActivity);
     }
 
