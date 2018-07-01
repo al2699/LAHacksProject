@@ -1,5 +1,10 @@
 package com.example.alan.lahacks;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 /**
  * Java class to hold each individual event's data.
  * Create an array of EventData objects in order to hold all of our data(or other data structure)
@@ -140,4 +145,5 @@ public class EventData {
     public int getId() {
         return id;
     }
+
 }

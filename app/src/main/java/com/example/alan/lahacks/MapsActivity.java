@@ -181,6 +181,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
 
             System.out.println("Finished Instantiating first element.");
+            reader.close();
             return events;
             }
             catch(FileNotFoundException e)
@@ -192,7 +193,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 e.printStackTrace();
             }
             return null;
-            //reader.close();
         }
 }
 

@@ -11,6 +11,11 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class EventProfile extends AppCompatActivity {
 
     //Initialize all of my Objects to be declared within onCreate method.
@@ -18,7 +23,7 @@ public class EventProfile extends AppCompatActivity {
     String descriptionTextString = "";
     int likeCount, saveCount, toGoCount;
     int clickCounter1, clickCounter2, clickCounter3;
-    EventData e[] = new EventData[1];
+    EventData[] events;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,12 +44,15 @@ public class EventProfile extends AppCompatActivity {
             }
         });
 
+        //Loading in the events and can search for one.
         int eventInteger;
+        events = makeObjects();
         eventInteger = grabInteger();
-        e[eventInteger] = new EventData("a","Set up your professional profile, learn the basics, and " +
-                " effectively harness the power of LinkedIn to connect with " +
-                " employers, gather career information, and find jobs.","c",0,0);
-        descriptionTextString += e[0].getDetails();
+        //e[eventInteger] = new EventData("a","Set up your professional profile, learn the basics, and " +
+        //        " effectively harness the power of LinkedIn to connect with " +
+        //        " employers, gather career information, and find jobs.","c",0,0);
+        descriptionTextString += events[eventInteger].getDetails();
+
 
         //Add actions to Like, save, and toGo buttons.
         final ImageButton likeButton = (ImageButton) findViewById(R.id.imageButton3) ;
@@ -150,6 +158,8 @@ public class EventProfile extends AppCompatActivity {
 
     }
 
+
+
     public int grabInteger()
     {
         Intent mIntent;
@@ -158,6 +168,92 @@ public class EventProfile extends AppCompatActivity {
         int intValue = mIntent.getIntExtra("eventInteger", 0);
 
         return intValue;
+    }
+
+    /*
+     Methods for event data creation, retrtival, and usage.
+     */
+
+    /**
+     * Makes an array of type EventData that is then filled with event data from a .csv file in the
+     * raw assets folder. The instantiate and filled array is then returned
+     *
+     * @return EventData array which is full and cannot be partially filled
+     */
+    public EventData[] makeObjects() {
+        System.out.println("makeObjects beginning");
+        BufferedReader reader = null;
+        EventData[] events;
+        int amountOfRows;
+
+        try {
+            System.out.println("Just entered try block. Will now read.");
+            reader = new BufferedReader(new InputStreamReader(getResources().openRawResource(R.raw.events)));
+            amountOfRows = getRowAmount(reader);
+            System.out.println("read in once. Opening again.");
+            reader.close();
+            reader = new BufferedReader(new InputStreamReader(getResources().openRawResource(R.raw.events)));
+            System.out.println("Just finished reading.");
+            events = new EventData[amountOfRows];
+
+            reader.readLine();
+            System.out.println("About to enter the for loop");
+            for(int j = 0; j < amountOfRows - 1; j++)
+            {
+                try
+                {
+                    String[] row;
+                    String temp;
+
+                    temp = reader.readLine();
+                    row = temp.split(",");
+
+                    System.out.println("Just finished filling string.");
+                    System.out.println("Lat: " + row[5]);
+                    System.out.println("Long: " + row[4]);
+                    events[j] = new EventData(row[1], row[2], row[3], Double.parseDouble(row[4]), Double.parseDouble(row[5]));
+                    System.out.println("Just created first object.");
+                    System.out.println(events[j]);
+                    System.out.println("Just finished object: " + j);
+                }
+                catch(NumberFormatException e)
+                {
+                    e.printStackTrace();
+                }
+            }
+
+            System.out.println("Finished Instantiating first element.");
+            reader.close();
+            return events;
+        }
+        catch(FileNotFoundException e)
+        {
+            System.out.println("REALLY ENCOUNTERED A FILE NOT FOUND EXCEPTION.");
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static int getRowAmount(BufferedReader reader) {
+        int rows;
+        rows = 0;
+
+        try
+        {
+            while (reader.readLine() != null)
+            {
+                rows++;
+            }
+            return rows;
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+        return 0;
     }
 
     public void toCommentPage(View view) {
