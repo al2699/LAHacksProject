@@ -1,8 +1,8 @@
 # groUp
 
-![](https://raw.githubusercontent.com/al2699/LAHacksProject/master/screenshots/rsz_image-1-2_1.jpg)
-
 ![](https://img.shields.io/badge/build-passing-brightgreen.svg)
+
+![](https://raw.githubusercontent.com/al2699/LAHacksProject/master/screenshots/rsz_image-1-2_1.jpg)
 
 
 
