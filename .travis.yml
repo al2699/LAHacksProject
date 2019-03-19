@@ -4,4 +4,4 @@ os:
    - linux
 
 script:
-   - ./gradlew check
+   - gradle check
