@@ -11,6 +11,8 @@ groUp is an event compiling application. It pulls all of the campus events from 
 
 This app was initially created at LAHacks 2018 in collaboration with a team of 6. We will continously be updating this project as times goes on. Please feel free to fork and contribute in the meanwhile.
 
+NOTE: IF PULLING AND COMPILING, change local.properties to your own local path that contains the android sdk. It currently has mine since travi-ci needs it in order to function and run tests.
+
 ### Screenshots
 
 #### User Profile
