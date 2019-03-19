@@ -1,6 +1,6 @@
 # groUp
 
-![](https://img.shields.io/badge/build-passing-brightgreen.svg)
+[![Build Status](https://travis-ci.com/al2699/LAHacksProject.svg?branch=master)](https://travis-ci.com/al2699/LAHacksProject)
 
 ![](https://raw.githubusercontent.com/al2699/LAHacksProject/master/screenshots/rsz_image-1-2_1.jpg)
 
