@@ -1,6 +1,5 @@
 package com.example.alan.lahacks;
 
-import android.app.ListActivity;
 import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -16,7 +15,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -171,6 +169,18 @@ public class EventList extends AppCompatActivity{
 
 
     }
+
+    //TODO: FINISH CONNECTING THIS  HANDLER TO THE MID TOOLBAR BUTTON
+    /**
+     * toEventProfile method. Takes user to GEvent Profile screen when button is clicked.
+     * @param view View
+     */
+    /*
+    public void toLoginPage(View view) {
+        Intent startNewActivity = new Intent(this, LoginPage.class);
+        startActivity(startNewActivity);
+    }
+    */
 
     /**
      * toEventProfile method. Takes user to GEvent Profile screen when button is clicked.

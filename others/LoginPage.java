@@ -1,4 +1,4 @@
-/**
+
 package com.example.alan.lahacks;
 
 import android.content.Intent;
@@ -30,6 +30,8 @@ public class LoginPage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        System.out.println("Beginning of oncreate");
+        Log.d("t", "In beginning");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
 //        mEmailPromptTextView = (TextView)findViewById(R.id.emailPrompt);
@@ -37,6 +39,7 @@ public class LoginPage extends AppCompatActivity {
         mEmailField = (EditText)findViewById(R.id.emailTextBox);
         mPasswordField = (EditText)findViewById(R.id.passwordTextBox);
         createAccountButton = (Button)findViewById(R.id.createAccButton);
+        System.out.println("Before account creation button");
         createAccountButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // When the create acc button is clicked
@@ -46,7 +49,7 @@ public class LoginPage extends AppCompatActivity {
         });
 
         mAuth = FirebaseAuth.getInstance();
-
+        System.out.println("Ended on create method");
     }
 
 
@@ -114,4 +117,3 @@ public class LoginPage extends AppCompatActivity {
         }
     }
 }
-*/
