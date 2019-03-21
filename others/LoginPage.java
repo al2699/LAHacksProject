@@ -1,3 +1,4 @@
+/**
 package com.example.alan.lahacks;
 
 import android.content.Intent;
@@ -113,3 +114,4 @@ public class LoginPage extends AppCompatActivity {
         }
     }
 }
+*/
