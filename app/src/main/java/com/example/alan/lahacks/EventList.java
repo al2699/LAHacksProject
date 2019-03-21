@@ -20,6 +20,7 @@ import android.widget.ArrayAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Queue;
 
 public class EventList extends AppCompatActivity{
 
@@ -35,6 +36,7 @@ public class EventList extends AppCompatActivity{
     RecyclerView recyclerView;
     EventAdapter adapter;
     List<EventData> events;
+    Queue<EventData> queuedEvents;
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -47,19 +49,13 @@ public class EventList extends AppCompatActivity{
         setContentView(R.layout.activity_event_list);
 
         events = new ArrayList<>();
+        queuedEvents = new CircularArrayQueue<EventData>(10);
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        events.add(
-                new EventData(
-                        1,
-                        "Networking",
-                        "Set up your professional profile, learn the basics, and " +
-                                " effectively harness the power of LinkedIn to connect with " +
-                                " employers, gather career information, and find jobs.",
-                        "2 Apr 2018",
-                        R.drawable.career));
+        queueEvents();
+        events.add(queuedEvents.remove());
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         // Create the adapter that will return a fragment for each of the three
@@ -148,6 +144,32 @@ public class EventList extends AppCompatActivity{
             }
             return null;
         }
+    }
+
+    public void loadMoreEvents(View view) {
+        events.add(queuedEvents.remove());
+        adapter = new EventAdapter(this, events);
+        recyclerView.setAdapter(adapter);
+    }
+
+    private void queueEvents(){
+        queuedEvents.add(new EventData(
+                        1,
+                        "Networking",
+                        "Set up your professional profile, learn the basics, and " +
+                                " effectively harness the power of LinkedIn to connect with " +
+                                " employers, gather career information, and find jobs.",
+                        "2 Apr 2018",
+                        R.drawable.career));
+        queuedEvents.add(new EventData(2, "Lol", "lol", "3 april 2034", R.drawable.dance));
+        queuedEvents.add(new EventData(2, "Lol", "lol", "3 april 2034", R.drawable.dance));
+        queuedEvents.add(new EventData(2, "Lol", "lol", "3 april 2034", R.drawable.dance));
+        queuedEvents.add(new EventData(2, "Lol", "lol", "3 april 2034", R.drawable.dance));
+        queuedEvents.add(new EventData(2, "Lol", "lol", "3 april 2034", R.drawable.dance));
+        queuedEvents.add(new EventData(2, "Lol", "lol", "3 april 2034", R.drawable.dance));
+        queuedEvents.add(new EventData(2, "Lol", "lol", "3 april 2034", R.drawable.dance));
+
+
     }
 
     /**

@@ -76,14 +76,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.addMarker(new MarkerOptions()
                 .position(testEvent)
                 .title(event1.getTitle())
-                .snippet(event1.getDetails()));
+                .snippet(event1.getShortDesc()));
 
         //TEST MARKER
         System.out.println("Making second programmatic event: marker");
         mMap.addMarker(new MarkerOptions()
                 .position(testEvent2)
                 .title(events[0].getTitle())
-                .snippet(events[0].getDetails()));
+                .snippet(events[0].getShortDesc()));
 
         //TODO: IMPLEMENT for-loop to iterate through an array of type Event and then make a marker
         //      for event on the Googlemap
@@ -95,7 +95,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             mMap.addMarker(new MarkerOptions()
                     .position(new LatLng(events[i].getLocation_latitude(), events[i].getLocation_longitude()))
                     .title(events[i].getTitle())
-                    .snippet(events[i].getDetails()));
+                    .snippet(events[i].getShortDesc()));
         }
 
 

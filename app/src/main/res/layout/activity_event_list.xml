@@ -63,6 +63,20 @@
                 android:text="@string/tab_text_3" />
 
         </android.support.design.widget.TabLayout>
+
+        <Button
+            android:id="@+id/LoadMore"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:onClick="loadMoreEvents"
+            android:text="Button"
+            app:layout_anchor="@+id/container"
+            app:layout_anchorGravity="right|top"
+            tools:layout_editor_absoluteX="-7dp"
+            tools:layout_editor_absoluteY="62dp" />
+
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.view.ViewPager

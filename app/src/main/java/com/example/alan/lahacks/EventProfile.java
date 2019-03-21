@@ -51,7 +51,7 @@ public class EventProfile extends AppCompatActivity {
         //e[eventInteger] = new EventData("a","Set up your professional profile, learn the basics, and " +
         //        " effectively harness the power of LinkedIn to connect with " +
         //        " employers, gather career information, and find jobs.","c",0,0);
-        descriptionTextString += events[eventInteger].getDetails();
+        descriptionTextString += events[eventInteger].getShortDesc();
 
 
         //Add actions to Like, save, and toGo buttons.
