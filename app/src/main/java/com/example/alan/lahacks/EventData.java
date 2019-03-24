@@ -14,8 +14,8 @@ public class EventData {
     private String title;
     private String shortDesc;
     private String date;
-    private double location_latitude;
-    private double location_longitude;
+    private double latitude;
+    private double longitude;
     private int upvotes;
     private int downvotes;
     private int image;
@@ -30,11 +30,12 @@ public class EventData {
      * @param image The number representing the unique image which corresponds to this event
      */
     public EventData(int id, String title, String shortDesc, String date, int image){
-        this.id = id;
-        this.title = title;
-        this.shortDesc = shortDesc;
-        this.date = date;
-        this.image = image;
+        setID(id);
+        setTitle(title);
+        setShortDesc(shortDesc);
+        setDate(date);
+        setImage(image);
+        setImage(image);
     }
 
     /**
@@ -42,29 +43,21 @@ public class EventData {
      * @param title Title of the event
      * @param shortDesc Short description of the event
      * @param date Date that the event will occur
-     * @param location_latitude The event's approximate latitude
-     * @param location_longitude The event's approximate longitude
+     * @param latitude The event's approximate latitude
+     * @param longitude The event's approximate longitude
      */
-    public EventData(String title, String shortDesc, String date, double location_latitude, double location_longitude){
-        this.title = title;
-        this.shortDesc = shortDesc;
-        this.date = date;
-        this.location_latitude = location_latitude;
-        this.location_longitude = location_longitude;
+    public EventData(String title, String shortDesc, String date, double latitude, double longitude){
+        setTitle(title);
+        setShortDesc(shortDesc);
+        setDate(date);
+        setLatitude(latitude);
+        setLongitude(longitude);
     }
 
     /**
      * Default constructor. Fills all instance variables with trash data.
      */
     public EventData(){
-        title = "New Event";
-        shortDesc = "Example Details";
-        /*date = "4 April 2018";
-        location_latitude = "12378592";
-        location_longitude = "168374";
-        thumbnail = "Insert Image id here";
-        upvotes = 200;
-        downvotes = 1000;*/
     }
 
     @Override
@@ -73,8 +66,8 @@ public class EventData {
                 "title='" + title + '\'' +
                 ", shortDesc='" + shortDesc + '\'' +
                 ", date='" + date + '\'' +
-                ", location_latitude=" + location_latitude +
-                ", location_longitude=" + location_longitude +
+                ", location_latitude=" + latitude +
+                ", location_longitude=" + longitude +
                 ", upvotes=" + upvotes +
                 ", downvotes=" + downvotes +
                 ", image=" + image +
@@ -89,6 +82,24 @@ public class EventData {
         title = string;
     }
 
+    public void setImage(int image){
+        this.image = image;
+    }
+
+    /**
+     * @param id This event's unique id
+     */
+    public void setID(int id){
+        this.id = id;
+    }
+
+    /**
+     * @param shortDesc Short description of this event in string form
+     */
+    public void setShortDesc(String shortDesc){
+        this.shortDesc = shortDesc;
+    }
+
     /**
      * @param string The date of the event in the form: MM/DD/YYYY
      */
@@ -99,15 +110,15 @@ public class EventData {
     /**
      * @param lat The event's approximate location lattitude
      */
-    public void setLocation_latitude(double lat){
-        location_latitude = lat;
+    public void setLatitude(double lat){
+        latitude = lat;
     }
 
     /**
      * @param lon The event's approximate location longitude
      */
-    public void setLocation_longitude(double lon){
-        location_longitude = lon;
+    public void setLongitude(double lon){
+        longitude = lon;
     }
 
     /**
@@ -148,15 +159,15 @@ public class EventData {
     /**
      * @return Returns this event's location lattitude
      */
-    public double getLocation_latitude(){
-        return location_latitude;
+    public double getLatitude(){
+        return latitude;
     }
 
     /**
      * @return Returns this event location's longitude
      */
-    public double getLocation_longitude(){
-        return location_longitude;
+    public double getLongitude(){
+        return longitude;
     }
 
     /**

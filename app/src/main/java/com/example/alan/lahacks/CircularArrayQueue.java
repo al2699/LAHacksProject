@@ -5,12 +5,22 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Queue;
 
+/**
+ * Queue data structure realized through an automatically expanding circular array
+ *
+ * @Author: Alan
+ * @Version: 1.0
+ * @param <E> Data type of objects to be held in this queue
+ */
 public class CircularArrayQueue<E> implements Queue {
 
     int size, capacity;
     int front, rear;
     Object[] innerData;
 
+    /**
+     * @param n Initial capacity of this queue
+     */
     public CircularArrayQueue(int n){
         capacity = n;
         innerData = (E[]) new Object[capacity];

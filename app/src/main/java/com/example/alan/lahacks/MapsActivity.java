@@ -61,10 +61,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
         // Add a marker in Sydney and move the camera
-        LatLng testEvent  = new LatLng(event1.getLocation_latitude(), event1.getLocation_longitude());
+        LatLng testEvent  = new LatLng(event1.getLatitude(), event1.getLongitude());
         LatLng sydney = new LatLng(33.134880, -117.303175);
         System.out.println("Making first programmatic event.");
-        LatLng testEvent2 = new LatLng(events[0].getLocation_latitude(), events[0].getLocation_latitude());
+        LatLng testEvent2 = new LatLng(events[0].getLatitude(), events[0].getLatitude());
 
         //Marker at fake miracosta
         mMap.addMarker(new MarkerOptions()
@@ -93,7 +93,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             System.out.println("Beginning iterative event: " + i);
 
             mMap.addMarker(new MarkerOptions()
-                    .position(new LatLng(events[i].getLocation_latitude(), events[i].getLocation_longitude()))
+                    .position(new LatLng(events[i].getLatitude(), events[i].getLongitude()))
                     .title(events[i].getTitle())
                     .snippet(events[i].getShortDesc()));
         }

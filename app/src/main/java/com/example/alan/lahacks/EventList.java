@@ -16,6 +16,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
@@ -31,6 +36,7 @@ public class EventList extends AppCompatActivity{
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
+    private DocumentReference mDocRef = FirebaseFirestore.getInstance().document("events-mcc/event1");
     RecyclerView recyclerView;
     EventAdapter adapter;
     List<EventData> events;
@@ -144,13 +150,36 @@ public class EventList extends AppCompatActivity{
         }
     }
 
+    /**
+     * Handler for the load more button. Removes events from the queuedEvents queue and places them
+     * onto the events arraylist and then updates the screen's displayed events.
+     * @param view The view for the load more events button
+     */
     public void loadMoreEvents(View view) {
         events.add(queuedEvents.remove());
         adapter = new EventAdapter(this, events);
         recyclerView.setAdapter(adapter);
     }
 
+    /**
+     * Helper method for queueing events once received from the backend server (TODO: finish backend)
+     */
     private void queueEvents(){
+        //Testing firestore. This should grab an event from the backend server and then place into a
+        //queue for future retrieval.
+        queuedEvents.add(new EventData(2, "Lol", "lol", "3 april 2034", R.drawable.dance));
+        System.out.println(R.drawable.dance);
+        mDocRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if(documentSnapshot.exists()){
+                    EventData grabbedEvent = documentSnapshot.toObject(EventData.class);
+                    grabbedEvent.setImage(R.drawable.career);
+                    queuedEvents.add(grabbedEvent);
+                }
+            }
+        });
+        /*
         queuedEvents.add(new EventData(
                         1,
                         "Networking",
@@ -166,11 +195,11 @@ public class EventList extends AppCompatActivity{
         queuedEvents.add(new EventData(2, "Lol", "lol", "3 april 2034", R.drawable.dance));
         queuedEvents.add(new EventData(2, "Lol", "lol", "3 april 2034", R.drawable.dance));
         queuedEvents.add(new EventData(2, "Lol", "lol", "3 april 2034", R.drawable.dance));
-
+        */
 
     }
 
-    //TODO: FINISH CONNECTING THIS  HANDLER TO THE MID TOOLBAR BUTTON
+    //TODO: FINISH CONNECTING THIS HANDLER TO THE MID TOOLBAR BUTTON
     /**
      * toEventProfile method. Takes user to GEvent Profile screen when button is clicked.
      * @param view View
